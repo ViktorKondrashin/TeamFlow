@@ -25,6 +25,10 @@
   display: grid;
   place-content: center;
 
+  &.fileOver {
+    border: 1px dashed var(--primary-color);
+  }
+
 }
 
 .dropzone-content {

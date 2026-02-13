@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ProfileHeader } from '../../common-ui/profile-header/profile-header';
 import { ProfileService } from '../../data/services/profile.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -18,9 +18,6 @@ import { PostFeed } from './post-feed/post-feed';
     AsyncPipe,
     RouterLink,
     SvgIcon,
-    NgForOf,
-    SubscriberCard,
-    NgOptimizedImage,
     ImgUrlPipe,
     PostFeed,
   ],
@@ -32,14 +29,22 @@ export class ProfilePage {
   route = inject(ActivatedRoute);
 
   me$ = toObservable(this.profileService.me);
+  isMe = signal<boolean>(false);
 
   subscribers$ = this.profileService.getSubscribersShortList(5);
 
   profile$ = this.route.params.pipe(
     switchMap(({ id }) => {
-      if (id === 'me') return this.me$;
+      if (id === 'me'){
+        this.isMe.set(true);
+        return this.me$;
 
-      return this.profileService.getAccount(id);
+      } else{
+        this.isMe.set(false);
+        return this.profileService.getAccount(id);
+
+      }
+
     }),
   );
 }

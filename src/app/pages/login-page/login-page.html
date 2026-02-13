@@ -1,3 +1,4 @@
+<div>
 <form
   class = "login-form"
   [formGroup]="form"
@@ -8,11 +9,12 @@
     Telegram username
     <input
       formControlName="username"
-      class = "tt-input" type="text" placeholder="Введите логин">
+      class = "tt-input"
+      type="text"
+      placeholder="Введите логин"
+      [class.tt-input--error]="isInvalid('username')"
+    >
   </label>
-
-
-
 
   <label class = "tt-control-label mb32">
      Пароль
@@ -22,9 +24,12 @@
       formControlName="password"
       class = "tt-input"
       [type]="isPasswordVisible() ? 'text' : 'password'"
-      placeholder="Введите пароль">
+      placeholder="Введите пароль"
+      [class.tt-input--error]="isInvalid('password')"
+    >
 
       <button
+        type = button
         class="password-eye-btn"
         [class.active] = "isPasswordVisible()"
         (click)="isPasswordVisible.set(!isPasswordVisible())"
@@ -43,4 +48,9 @@
     Войти
   </button>
 </form>
-<img src="/assets/svg/logo-big.svg" alt="logo">
+
+</div>
+<div class="login-logo-big">
+
+  <img src="/assets/svg/logo-big.svg" alt="logo" >
+</div>

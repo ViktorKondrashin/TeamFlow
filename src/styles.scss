@@ -56,6 +56,9 @@ body {
   cursor: pointer;
   border-radius: 2px;
   border: 1px solid var(--dark-color);
+  &:active{
+    background: var(--dark-hover-color);
+  }
 }
 
 .btn-shadow {

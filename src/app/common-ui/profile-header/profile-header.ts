@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { Profile } from '../../data/interfaces/profile.interface';
 import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
 
@@ -9,5 +9,8 @@ import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
   styleUrl: './profile-header.scss',
 })
 export class ProfileHeader {
-  profile = input<Profile>();
+  profile = input<Profile | null>();
+  ngOnInit() {
+    console.log('profile', this.profile, this.profile());
+  }
 }

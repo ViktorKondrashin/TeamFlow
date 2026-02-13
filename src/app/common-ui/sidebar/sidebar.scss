@@ -29,7 +29,7 @@
   text-align: left;
   border-radius: 2px;
   text-decoration: none;
-
+  &.active,
   &:hover,
   &:focus-within {
     background: var(--dark-hover-color);

@@ -1,6 +1,18 @@
-<img [src]="preview()" alt="avatar" class = "avatar">
+@if (preview() == this.profileService.me()?.avatarUrl) {
+  <img [src]="preview() | imgUrl " alt="avatar" class = "avatar">
+} @else {
+  <img [src]="preview() " alt="avatar" class = "avatar">
 
-<div class="dropzone" tabindex = "0" (keyup.enter) = "fileDrop.click()">
+}
+
+
+<div
+  class="dropzone"
+  tabindex = "0"
+  (keyup.enter) = "fileDrop.click()"
+  (fileDropped) = "onFileDropped($event)"
+  dnd
+>
 
   <div class = "dropzone-content">
     <svg icon="upload"></svg>

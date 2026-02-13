@@ -2,7 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { SvgIcon } from '../svg-icon/svg-icon';
 import { AsyncPipe, JsonPipe, NgForOf} from '@angular/common';
 import {SubscriberCard} from './subscriber-card/subscriber-card';
-import {RouterLink} from '@angular/router';
+import {RouterLink, RouterLinkActive } from '@angular/router';
 import { ProfileService } from '../../data/services/profile.service';
 import { firstValueFrom, map } from 'rxjs';
 import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
@@ -10,15 +10,22 @@ import { Profile } from '../../data/interfaces/profile.interface';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [SvgIcon, NgForOf, SubscriberCard, RouterLink, AsyncPipe, JsonPipe, ImgUrlPipe],
+  imports: [
+    SvgIcon,
+    NgForOf,
+    SubscriberCard,
+    RouterLink,
+    AsyncPipe,
+    ImgUrlPipe,
+    RouterLinkActive,
+  ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
   profileService: ProfileService = inject(ProfileService);
 
-  subscribers$ = this.profileService
-    .getSubscribersShortList();
+  subscribers$ = this.profileService.getSubscribersShortList();
 
   me = this.profileService.me;
 
@@ -36,7 +43,7 @@ export class Sidebar {
     {
       label: 'Поиск',
       icon: 'search',
-      link: '',
+      link: 'search',
     },
   ];
 

@@ -10,6 +10,7 @@
     <li *ngFor = "let menuItem of menuItems">
       <a
         [routerLink]="[menuItem.link]"
+        routerLinkActive="active"
         class="menu-item"
       >
         <svg [icon] = "menuItem.icon"></svg>

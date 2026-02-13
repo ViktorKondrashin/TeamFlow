@@ -2,11 +2,20 @@
   <div class="profile-card">
 
     <div class="avatar-name">
+      @if (profile.avatarUrl == null){
+        <img
+          src="assets/imgs/avatar-placeholder.png"
+          alt = "avatar"
+          class="profile-card__avatar"
+        >
+      } @else {
       <img
         [src]="profile.avatarUrl | imgUrl"
         alt = "avatar"
         class="profile-card__avatar"
       >
+
+      }
       <div class="profile-card__name">
         <strong class="h6">
           {{ profile.firstName }} {{ profile.lastName }}

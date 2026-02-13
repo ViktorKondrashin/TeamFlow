@@ -1,7 +1,22 @@
-<app-profile-header>
-  <!--  [profile] = "profile"-->
+<div>
+  <app-profile-header
+    [profile] = "profileService.me()"
+    class = "profile-header mb32">
 
-</app-profile-header>
+
+  </app-profile-header>
+
+  <h3 class="h6 mb16">Навыки</h3>
+  <div class="stack-wrapper mb32">
+    @for (skill of profileService.me()?.stack; track skill){
+      <div class = "skill-tag"> {{skill}}</div>
+    }
+  </div>
+
+  <h3 class="h6 mb16">О себе</h3>
+  <p class="medium-text">{{profileService.me()?.description}}</p>
+
+</div>
 
 <form class="profile-form__wrapper" [formGroup]="form">
   <div class="profile-form">

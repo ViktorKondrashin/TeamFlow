@@ -1,59 +1,58 @@
 # TeamFlow
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+TeamFlow — учебный веб-мессенджер/социальное SPA-приложение на Angular.
 
-## Development server
+Цель проекта — собрать “реалистичное” фронтенд-приложение: маршрутизация, авторизация, профиль пользователя, чат-страницы, UI-компоненты, работа с ассетами (SVG/шрифты), сборка и деплой на GitHub Pages.
 
-To start a local development server, run:
+Демо: https://viktorkondrashin.github.io/TeamFlow/
 
+---
+
+## Содержание
+
+- [Возможности](#возможности)
+- [Скриншоты](#скриншоты)
+- [Технологии](#технологии)
+- [Как запустить локально](#как-запустить-локально)
+- [Сборка](#сборка)
+- [Деплой на GitHub Pages](#деплой-на-github-pages)
+- [Авторизация (Telegram-бот)](#авторизация-telegram-бот)
+- [Архитектура фронта](#архитектура-фронта)
+- [Работа с ассетами (SVG, шрифты, картинки)](#работа-с-ассетами-svg-шрифты-картинки)
+- [Troubleshooting](#troubleshooting)
+- [Roadmap](#roadmap)
+- [Лицензия](#лицензия)
+
+---
+
+## Возможности
+
+- Профиль пользователя: данные, описание, навыки, аватар (drag & drop / загрузка).
+- Навигация по разделам (профиль / чаты / поиск и т.д.).
+- UI на SCSS, тёмная тема, SVG-иконки.
+- Кастомные шрифты (JetBrains Mono).
+- Работа как SPA (маршрутизация, динамические страницы).
+- Публикация на GitHub Pages.
+
+> Проект учебный, поэтому часть функционала может быть в процессе разработки или прототипирования.
+
+---
+
+## Технологии
+
+- Angular (SPA)
+- TypeScript
+- SCSS
+- GitHub Pages (хостинг)
+
+---
+
+## Как запустить локально
+
+Требования:
+- Node.js + npm
+- Angular CLI
+
+Установка зависимостей:
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+npm install

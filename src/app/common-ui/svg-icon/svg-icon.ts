@@ -10,7 +10,7 @@ export class SvgIcon {
   @Input() icon: string = '';
 
   get href(){
-    return `/assets/svg/${this.icon}.svg#${this.icon}`;
+    return `assets/svg/${this.icon}.svg#${this.icon}`;
   }
 
 
